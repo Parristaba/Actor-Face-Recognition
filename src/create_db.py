@@ -41,9 +41,9 @@ import faiss
 # -------------------------
 # Configuration / Constants (identical defaults to original)
 # -------------------------
-DOWNLOAD_DIR = 'downloaded_faces'  # folders per actor
-SAVE_INDEX = 'celebrity_index.faiss'
-SAVE_NAMES = 'celebrity_names.pkl'
+DOWNLOAD_DIR = 'Data/downloaded_faces'  # folders per actor
+SAVE_INDEX = 'VectorDatabase/celebrity_index.faiss'
+SAVE_NAMES = 'VectorDatabase/celebrity_names.pkl'
 MODEL_SIZE = 160
 MIN_FACE_SIZE = 50
 
@@ -54,7 +54,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-print("Using device:", device)  # kept for parity with original script
+print("Using device:", device)
 
 # Load model (same pretrained checkpoint as original)
 model = InceptionResnetV1(pretrained='vggface2').eval().to(device)
@@ -124,6 +124,8 @@ def process_dataset(download_dir: str = DOWNLOAD_DIR,
 
     Behavior matches the original script:
       - actor folder with trailing '+' => treat images as precropped faces
+      ---> Added certain important actors manually which are already cropped. This is done to showcase performance.
+      ---> Note that this part won't run without errors if there are no such folders in the dataset.
       - otherwise, read associated .txt rect files per image and crop each rect
       - skip rects smaller than MIN_FACE_SIZE
     """

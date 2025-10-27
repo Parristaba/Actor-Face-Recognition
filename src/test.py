@@ -43,10 +43,14 @@ from collections import OrderedDict, defaultdict
 # -------------------------
 
 # To use with your own files, download necessary assets and set paths here. I removed mine for privacy.
-VIDEO_PATH = '' 
-YOLO_MODEL_PATH = ''
-FAISS_INDEX_PATH = ''
-FAISS_NAMES_PATH = ''   
+VIDEO_PATH = '' # e.g, 'input/my_video.mp4'
+
+# The YOLOv8 model used during development and testing is available at: https://github.com/YapaLab/yolo-face
+YOLO_MODEL_PATH = '' # e.g, 'models/yolov8n-face.pt'  
+
+# These paths are defined in the create_db.py script when building the FAISS index and names mapping. If you used different paths there, update them here as well.
+FAISS_INDEX_PATH = 'Data/VectorDatabase/celebrity_index.faiss' 
+FAISS_NAMES_PATH = 'Data/VectorDatabase/celebrity_names.pkl'   
 
 # These constants control detection and recognition behavior. For me, these are the best settings, however note that each movie may require different tuning.
 DETECT_EVERY_N = 5
