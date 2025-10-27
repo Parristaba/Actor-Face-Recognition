@@ -1,4 +1,4 @@
-# Face Recognition Database Builder 🧑‍💻
+# Real Time Face Recognition of Actors from Movie Scenes
 
 ![Project Demo](Outputs/1.gif)
 
