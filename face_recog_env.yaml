@@ -1,0 +1,23 @@
+# Conda environment for face recognition project
+# Note: Adjust package versions as needed for compatibility
+
+name: face_recog_env
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - cudatoolkit=11.8
+  - pytorch=2.1.*  # works with CUDA 11.8
+  - torchvision=0.16.*
+  - torchaudio=2.1.*
+  - faiss-gpu=1.7.4
+  - opencv
+  - numpy<2.0
+  - tqdm
+  - pip
+  - pip:
+      - facenet-pytorch
+      - ultralytics
