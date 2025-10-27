@@ -1,5 +1,7 @@
 # Face Recognition Database Builder 🧑‍💻
 
+![Project Demo](Outputs/1.gif)
+
 This project is a two-stage pipeline designed to build a fast, searchable face recognition database (**FAISS index**) using images and bounding boxes extracted from the **IMDb-Face dataset** (source: [IMDb-Face](https://github.com/fwang91/IMDb-Face)).
 
 The pipeline consists of two highly-structured Python scripts:  
@@ -8,6 +10,8 @@ The pipeline consists of two highly-structured Python scripts:
 ---
 
 ## 🚀 Quick Start
+
+![Pipeline Overview](Outputs/2.gif)
 
 ### 1. Prerequisites
 
@@ -44,6 +48,8 @@ pip install -r requirements.txt
 ## ⚙️ Usage
 
 ### Stage 1: Data Extraction and Download (`avengers_cast_images.py`)
+
+![Data Extraction](Outputs/3.png)
 
 This script reads the CSV, filters actors, and downloads corresponding images and bounding boxes.
 
@@ -88,6 +94,8 @@ downloaded_faces/
 ---
 
 ### Stage 2: Database Creation (`create_db.py`)
+
+![Database Creation](Outputs/5.png)
 
 This script scans the downloaded images, computes 512-dimensional face embeddings, and constructs the final searchable FAISS index.
 
